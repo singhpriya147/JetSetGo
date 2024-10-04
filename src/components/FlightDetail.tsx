@@ -36,7 +36,7 @@ const status = [
 
 const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
   return (
-    <div className='w-[600px] h-[550px] bg-white border-size border-green-50 absolute right-0 m-4 rounded-md p-3'>
+    <div className='w-[600px] h-[550px] bg-white border-size border-green-50 absolute shadow-md right-0 m-4 rounded-md p-3'>
       <div className='h-24 border-b-2 p-3'>
         <LeftArrow height={50} weight={50} onClick={() => setdetail(!detail)} />
         <span>Flight Detail</span>

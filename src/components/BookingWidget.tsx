@@ -138,7 +138,10 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
       <div className='bg-[#F5F7FA] w-24 text-center  rounded-md p-1 '>
         <span className='accent-text'>Flights</span>
       </div>
-      <div className='flex flex-row gap-2 items-center'>
+      <div>
+       
+      </div>
+      <div className='flex flex-row gap-2 items-center max-sm:flex-col'>
         {/* <LocationIcon /> */}
         <SelectDemo
           label={
@@ -175,7 +178,7 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
           type='arrival'
           onCityChange={handleCityChange}
         />
-        <div className='flex flex-row gap-2 pl-6'>
+        <div className='flex flex-row gap-2 max-sm:{flex-col pl-0}'>
           <div>
             <Button variant='outline' onClick={toggleDepartureCalender}>
               {departureDate ? (
@@ -240,7 +243,7 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
           </div>
         </div>
       </div>
-      <div className='flex  justify-end'>
+      <div className='flex  justify-end max-sm:justify-center'>
         <Button
           onClick={handleSearchClick}
           style={{ background: '#003E39' }}
