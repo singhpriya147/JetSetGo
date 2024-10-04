@@ -73,14 +73,22 @@ const router = useRouter();
 
 const [cityList, setCityList] = useState<City[]>([]);
 
-const { arrivalCity, departureCity, setArrivalCity, setDepartureCity } =
-  useCityContext();
+const {
+  arrivalCity,
+  departureCity,
+  setArrivalCity,
+  setDepartureCity,
+  departureDate,
+  returnDate,
+  setDepartureDate,
+  setReturnDate,
+} = useCityContext();
 
 const [isDepartureOpen, setIsDepartureOpen] = useState<boolean>(false);
 const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
 
-const [departureDate, setDepartureDate] = useState<Date | null>(null);
-const [returnDate, setReturnDate] = useState<Date | null>(null);
+// const [departureDate, setDepartureDate] = useState<Date | null>(null);
+// const [returnDate, setReturnDate] = useState<Date | null>(null);
 
 
 
@@ -113,23 +121,24 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
      ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
      : 'Select Date';
  };
+ const formatDateForLabel=(date:Date | null):string=>{
+return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',year:'numeric'}):'Select Date'
+ };
 
  const handleSearchClick = () => {
-   const selectedDepartureCity = departureCity; // Assuming you lift this state or access it from context
-   const selectedArrivalCity = arrivalCity; // Assuming you lift this state or access it from context
-
-   // Optionally, set these values in context if needed
+   const selectedDepartureCity = departureCity;
+   const selectedArrivalCity = arrivalCity; 
+   
    setDepartureCity(selectedDepartureCity);
    setArrivalCity(selectedArrivalCity);
 
-   // Navigate to the loading page
+  
    router.push('/loading');
  };
 
 
 
   return (
-    // <div className='bg-white rounded-lg border-2 border-gray-300 h-52 w-2/3 flex  flex-col p-5 gap-8'>
     <div className=' flex  flex-col p-3 gap-6 '>
       <div className='bg-[#F5F7FA] w-24 text-center rounded-md p-1 '>
         <span>Flights</span>
@@ -162,8 +171,21 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
         <div className='flex flex-row gap-2 pl-6'>
           <div>
             <Button variant='outline' onClick={toggleDepartureCalender}>
-              <CalenderIcon className='mr-2' />
-              {departureDate ? formatDate(departureDate) : 'Departure'}
+        
+              {departureDate ? (
+                <div >
+                  <span>Departure</span>
+                  <div className='flex flex-row'>
+                    <CalenderIcon className='mr-2' />
+                    {formatDateForLabel(departureDate)}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <CalenderIcon className='mr-2' />
+                  <p>Departure</p>
+                </>
+              )}
             </Button>
 
             {isDepartureOpen ? (
@@ -179,8 +201,21 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
           </div>
           <div>
             <Button variant='outline' onClick={toggleReturnCalender}>
-              <CalenderIcon className='mr-2' />
-              {returnDate ? formatDate(returnDate) : 'Return'}
+              {/* <CalenderIcon className='mr-2' /> */}
+              {returnDate ? (
+                <div>
+                  <span>Return</span>
+                  <div className='flex flex-row'>
+                    <CalenderIcon className='mr-2' />
+                    {formatDateForLabel(returnDate)}
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <CalenderIcon className='mr-2' />
+                  <p>Return</p>
+                </>
+              )}
             </Button>
             {isreturnOpen ? (
               <Calendar

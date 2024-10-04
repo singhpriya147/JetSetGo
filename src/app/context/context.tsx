@@ -14,6 +14,10 @@ interface CityContextType {
   setDepartureCity: (city: City | null) => void;
 
   setArrivalCity: (city: City | null) => void;
+  departureDate: Date | null;
+  returnDate: Date | null;
+  setDepartureDate: (date: Date | null) => void;
+  setReturnDate:(date:Date |null)=>void;
 }
 
 // // Create the context
@@ -24,12 +28,19 @@ const CityContext = createContext<CityContextType | undefined>(undefined);
 export const CityProvider = ({ children }: { children: ReactNode }) => {
   const [departureCity, setDepartureCity] = useState<City | null>(null);
   const [arrivalCity, setArrivalCity] = useState<City | null>(null);
+const [departureDate, setDepartureDate] = useState<Date | null>(null);
+const [returnDate, setReturnDate] = useState<Date | null>(null);
 
   const value = {
     departureCity,
     arrivalCity,
     setDepartureCity,
     setArrivalCity,
+     departureDate,
+  returnDate,
+  setDepartureDate,
+  setReturnDate,
+
   };
 
   return (

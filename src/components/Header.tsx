@@ -6,7 +6,8 @@ import { HeaderSerachIcon } from '@/icons';
 import { CrossIcon } from '@/icons';
 import BookingWidget from './BookingWidget';
 const Header = () => {
- const {arrivalCity,departureCity}=useCityContext()
+ const { arrivalCity, departureCity, departureDate, returnDate } =
+   useCityContext();
 const[openBookingWidget,setOpenBookingWidget]=useState(false);
 
 const toggleWidget=()=>{
@@ -18,6 +19,17 @@ const handleCrossClick = () => {
 };
  console.log("departure city in header",departureCity)
   console.log('arrival city in header', arrivalCity);
+  console.log("departure date ",departureDate)
+ const formatDate = (date: Date | null): string => {
+   return date
+     ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+     : 'Select Date';
+ };
+
+
+
+
+
   return (
     <div>
       {openBookingWidget ? (
@@ -43,7 +55,7 @@ const handleCrossClick = () => {
             <div className='w-0.5 h-10 bg-slate-200 rounded-md'></div>
 
             <div className='flex fel-row'>
-              <span>JUN 25- JUL6</span>
+              <span>{formatDate(departureDate)}-{formatDate(returnDate)}</span>
             </div>
             <div className='w-0.5 h-10 bg-slate-200 rounded-sm'></div>
             <HeaderSerachIcon
