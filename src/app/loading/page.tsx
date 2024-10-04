@@ -1,27 +1,20 @@
-// pages/about.tsx
-// import React from 'react';
-// import CustomLayout from './layout';
 
-// const AboutPage = () => {
-//   return (
-//     <div>
-//       <h1>About Us</h1>
-//       <p>This is the about page content.</p>
-//     </div>
-//   );
-// };
+'use client';
 
-// AboutPage.getLayout = function getLayout(page: React.ReactElement) {
-//   return <CustomLayout>{page}</CustomLayout>;
-// };
+import Header from '@/components/Header';
 
-// export default AboutPage;
-import React from 'react'
+// import { useEffect } from 'react';
+export default function LoadingPage() {
+  // const { arrivalCity, departureCity } = useCityContext();
 
-const page = () => {
   return (
-    <div>page</div>
-  )
+    <div>
+      <Header /> {/* Now it has context access */}
+      <h2>Loading...</h2>
+      {/* <p>Departure City: {departureCity?.cityName}</p>
+      <p>Arrival City: {arrivalCity?.cityName}</p> */}
+    </div>
+  );
 }
 
-export default page
+

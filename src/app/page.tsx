@@ -1,6 +1,8 @@
 'use client';
 import { CalenderIcon } from '@/icons';
 import { SearchIcon } from '@/icons';
+import { useRouter } from 'next/navigation';
+import { useCityContext } from './context/context';
 import {
   Select,
   SelectTrigger,
@@ -17,19 +19,52 @@ import { Button } from '@/components/ui/button';
 import { data } from '../data/airport';
 import { useEffect, useState } from 'react';
 
-export function SelectDemo({label,city}:{city:string[],label:string}) {
+interface City {
+  cityName: string; 
+  code: string; 
+}
+
+export function SelectDemo({
+  label,
+  type,
+  cityList,
+  onCityChange,
+}: {
+  label: string;
+
+  type: 'departure' | 'arrival';
+  cityList: City[];
+  onCityChange: (city: City, type: 'departure' | 'arrival') => void;
+}) {
+  const handleChange = (cityNameValue: string) => {
+    const selectedCityObj = cityList.find(
+      (item) => item.cityName === cityNameValue
+    );
+    if (selectedCityObj) {
+      // setdepartureCity(selectedCityObj);
+      onCityChange(selectedCityObj, type);
+      //  console.log(
+      //    `Selected city for ${type}: `,
+      //    selectedCityObj.cityName,
+      //    selectedCityObj.code
+      //  );
+      
+    }
+  };
+
   
+
   return (
-    <Select>
+    <Select onValueChange={handleChange}>
       <SelectTrigger className='w-[180px]'>
         <SelectValue placeholder={label} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          
-
-          {city.map((item,index) => (
-            <SelectItem key={index} value={item}>{item}</SelectItem>
+          {cityList.map((item, index) => (
+            <SelectItem key={index} value={item.cityName}>
+              {item.cityName}
+            </SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>
@@ -38,10 +73,12 @@ export function SelectDemo({label,city}:{city:string[],label:string}) {
 }
 
 export default function Home() {
+  const router = useRouter();
+  
+    const [cityList, setCityList] = useState<City[]>([]);
 
-  const [cityList, setCityList] = useState<string[]>([]);
-  const[depatureCity,setDepartureCity]=useState({})
-  const[arrivalCity,setArrivalCity]=useState({})
+
+const {arrivalCity,departureCity,setArrivalCity,setDepartureCity}=useCityContext()
 
   const [isDepartureOpen, setIsDepartureOpen] = useState<boolean>(false);
     const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
@@ -49,10 +86,33 @@ export default function Home() {
 const [departureDate, setDepartureDate] = useState<Date | null>(null);
 const [returnDate, setReturnDate] = useState<Date | null>(null);
 
+
+
+
+
   useEffect(() => {
-    const cityName = data.airports.map((airport) => airport.city);
+ const cityName=data.airports.map((airport)=>(
+  {
+cityName:airport.city,
+code:airport.code
+ }
+
+ ))
     setCityList(cityName);
   }, []);
+
+ 
+ const handleCityChange = (city: City, type: 'departure' | 'arrival') => {
+   if (type === 'departure') {
+     setDepartureCity(city);
+   } else if (type === 'arrival') {
+     setArrivalCity(city);
+   }
+ };
+
+
+
+
 
   const toggleDepartureCalender=()=>{
     setIsDepartureOpen((prev) => !prev);
@@ -70,13 +130,35 @@ return date
   ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
   : 'Select Date'; 
    }
+
+   const handleSearchClick = () => {
+    const selectedDepartureCity = departureCity; // Assuming you lift this state or access it from context
+    const selectedArrivalCity = arrivalCity; // Assuming you lift this state or access it from context
+
+    // Optionally, set these values in context if needed
+    setDepartureCity(selectedDepartureCity);
+    setArrivalCity(selectedArrivalCity);
+
+    // Navigate to the loading page
+    router.push('/loading');
+   };
  
   return (
     <div className='  grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)] border-2 border-black '>
       <h1 className='text-4xl'>Good AfterNoon ,Brian</h1>
       <div className='flex flex-row gap-2'>
-        <SelectDemo label='where From?' city={cityList} />
-        <SelectDemo label='where to?' city={cityList} />
+        <SelectDemo
+          label='where From?'
+          type='departure'
+          cityList={cityList}
+          onCityChange={handleCityChange}
+        />
+        <SelectDemo
+          label='where to?'
+          cityList={cityList}
+          type='arrival'
+          onCityChange={handleCityChange}
+        />
 
         <div className='flex flex-row gap-2'>
           <div>
@@ -113,7 +195,8 @@ return date
             )}
           </div>
         </div>
-        <Button>
+        
+        <Button onClick={handleSearchClick}>
           <SearchIcon />
           Search Flights
         </Button>
