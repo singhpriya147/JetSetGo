@@ -6,7 +6,7 @@ import Card from '@/components/Card';
 import CardSkeleton from '@/components/CardSkeleton';
 import { useEffect, useState } from 'react';
 import LoadingCard from '@/components/LoadingCard';
-
+import Loader from '@/components/Loader';
 import { useRouter } from 'next/navigation';
 
 
@@ -23,8 +23,8 @@ const router=useRouter();
  }, []);
   return (
     <div>
-      <Header />
-
+      <Header/>
+      <Loader/>
       {loading ? (
         <div className='flex justify-center items-start'>
           <div className='absolute z-50 pt-4 '>

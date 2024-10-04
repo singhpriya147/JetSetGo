@@ -36,7 +36,7 @@ const status = [
 
 const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
   return (
-    <div className='w-[600px] h-[550px] bg-white border-2 border-green-50 absolute right-0 m-4 rounded-md p-3'>
+    <div className='w-[600px] h-[550px] bg-white border-size border-green-50 absolute right-0 m-4 rounded-md p-3'>
       <div className='h-24 border-b-2 p-3'>
         <LeftArrow height={50} weight={50} onClick={() => setdetail(!detail)} />
         <span>Flight Detail</span>
@@ -48,7 +48,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           {status.map((item) => (
             <div className='flex flex-row gap-3'>
               <div className=' flex flex-col justify-center gap-1 mb-1 items-center'>
-                <div className='h-[15px] w-[15px] border-2 border-[#000C0B] rounded-full'></div>
+                <div className='h-[15px] w-[15px] border-size border-[#000C0B] rounded-full'></div>
                 {/*  if layover is not empty sring then added dotted line instead of solid  line  */}
 
                 <div

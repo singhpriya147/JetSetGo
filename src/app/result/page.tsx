@@ -16,6 +16,7 @@ const toggleDetail=()=>{
     <div>
       {detail ? <FlightDetail detail={detail} setdetail={setdetail} /> : ' '}
       <Header />
+      <div className='h-[1px] bg-[#E6E8EB]'></div>
       <div className='flex justify-center items-center flex-col pt-6 gap-3'>
         <div onClick={toggleDetail}>
           <Card />

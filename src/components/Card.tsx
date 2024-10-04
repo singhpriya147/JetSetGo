@@ -5,7 +5,7 @@ import { Separator } from "./ui/separator";
 
 const Card = () => {
   return (
-    <div className='h-48 w-[1056px] bg-white border-2 rounded-md borderp-4  flex flex-row justify-between'>
+    <div className='h-48 w-[1056px] bg-white border-size rounded-md borderp-4  flex flex-row justify-between'>
       <div className='w-3/4 flex flex-col justify-center gap-5 p-4'>
         <div className='flex flex-row gap-2'>
           <EmiratesLogo style={{ height: 50, width: 50 }} />
@@ -29,11 +29,11 @@ const Card = () => {
             <p className='text-sm'>Emirates &#8226; AT4334</p>
             <h3 className='text-sec'>9:45AM- 11:45PM</h3>
           </div>
-          <div className='w-1/5  pl-2'>
-            <p className='text-sm'>DXB-CDG</p>
+          <div className='w-1/5  '>
+            <p className='text-sm '>DXB-CDG</p>
             <h3 className='text-sec'>4h 10min</h3>
           </div>
-          <div className='w-1/5  pl-2'>
+          <div className='w-1/5  '>
             <p className='text-sm'>6h 32m in Lisbon</p>
             <h3 className='text-sec'>2 stops</h3>
           </div>

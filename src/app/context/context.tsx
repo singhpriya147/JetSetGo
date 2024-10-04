@@ -18,6 +18,8 @@ interface CityContextType {
   returnDate: Date | null;
   setDepartureDate: (date: Date | null) => void;
   setReturnDate:(date:Date |null)=>void;
+  loading:boolean| null;
+  setIsLaoding:(loading:boolean)=>void
 }
 
 

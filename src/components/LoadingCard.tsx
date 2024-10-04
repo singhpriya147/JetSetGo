@@ -18,7 +18,7 @@ const LoadingCard = () => {
     }
   },[currentStep])
   return (
-    <div className='h-80 w-80 bg-white rounded-xl flex flex-col justify-center items-center pb-3 border-2 border-grey-400'>
+    <div className='h-80 w-80 bg-white rounded-xl flex flex-col justify-center items-center pb-3  border-size border-grey-400'>
       <Image
         src={image}
         width={150}

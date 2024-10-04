@@ -49,7 +49,7 @@ export function SelectDemo({
   };
 
   return (
-    <Select onValueChange={handleChange}>
+    <Select onValueChange={handleChange} >
       <SelectTrigger className='w-[180px]'>
         <SelectValue placeholder={label} />
       </SelectTrigger>

@@ -22,6 +22,9 @@ body {
   .border-color{
     color:#E6E8EB
   }
+  .border-size{
+    border-width:1px
+  }
 }
 
 @layer base {
