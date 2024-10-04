@@ -78,7 +78,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           <div></div>
         </div>
 
-        <div className='h-[200px] w-[400px] flex flex-col pt-5 items-end gap-24 justify-center items-center max-sm:gap-5'>
+        <div className='h-[200px] w-[400px] flex flex-col pt-5 items-end gap-24 justify-center max-sm:items-center max-sm:gap-5'>
           <div className='flex flex-row gap-3'>
             <LufthansaLogo style={{ height: 50, width: 50 }} />
 
