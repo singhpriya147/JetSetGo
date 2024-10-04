@@ -3,7 +3,13 @@ import Header from '@/components/Header';
 import Card from '@/components/Card';
 import { useState } from 'react';
 import FlightDetail from '@/components/FlightDetail';
-const page = () => {
+
+
+
+
+const ResultPage = () => {
+
+
 const [detail,setDetail]=useState(false);
 
 const toggleDetail=()=>{
@@ -35,4 +41,4 @@ const toggleDetail=()=>{
   );
 }
 
-export default page
+export default ResultPage;

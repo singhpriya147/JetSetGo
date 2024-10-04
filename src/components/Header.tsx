@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import { useCityContext } from '@/app/context/context';
-import Loader from './Loader';
+
 import { HeaderSerachIcon } from '@/icons';
 import { CrossIcon } from '@/icons';
 import BookingWidget from './BookingWidget';

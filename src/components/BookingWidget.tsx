@@ -98,7 +98,7 @@ const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
       key:index,
     }));
     setCityList(cityName);
-  }, [data]);
+  }, []);
  const handleCityChange = (city: City, type: 'departure' | 'arrival') => {
    if (type === 'departure') {
      setDepartureCity(city);
