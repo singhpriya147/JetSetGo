@@ -45,8 +45,8 @@ const FlightDetail: React.FC<Props> = ({ detail, setDetail }) => {
       <div className='flex flex-row max-sm:flex-col'>
         <div className='pt-5'>
           {/* stepper  */}
-          {status.map((item,index) => (
-            <div className='flex flex-row gap-3'>
+          {status.map((item, index) => (
+            <div className='flex flex-row gap-3' key={index}>
               <div className=' flex flex-col justify-center gap-1 mb-1 items-center'>
                 <div className='h-[15px] w-[15px] border-size border-[#000C0B] rounded-full'></div>
                 {/*  if layover is not empty sring then added dotted line instead of solid  line  */}
@@ -60,7 +60,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setDetail }) => {
                 ></div>
               </div>
 
-              <div key={index}>
+              <div>
                 <span className='text-sm'>{item.day}</span>
                 <div className='flex flex-col gap-2'>
                   <h2>
