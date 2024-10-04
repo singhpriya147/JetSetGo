@@ -125,9 +125,12 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
    // Navigate to the loading page
    router.push('/loading');
  };
+
+
+
   return (
     <div className='bg-white rounded-lg border-2 border-gray-300 h-52 w-2/3 flex  flex-col p-5 gap-8'>
-      <div className='bg-gray-200 w-24 text-center rounded-md p-1'>
+      <div className='bg-[#F5F7FA] w-24 text-center rounded-md p-1'>
         <span>Flights</span>
       </div>
       <div className='flex flex-row gap-2 items-center'>
@@ -192,8 +195,11 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
         </div>
       </div>
       <div className='flex  justify-end'>
-        <Button onClick={handleSearchClick} style={{background: '#003E39'
-}} className='flex gap-4 pl-8 pr-8'>
+        <Button
+          onClick={handleSearchClick}
+          style={{ background: '#003E39' }}
+          className='flex gap-4 pl-8 pr-8'
+        >
           <SearchIcon />
           Search Flights
         </Button>
