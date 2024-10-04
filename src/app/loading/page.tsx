@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation';
 
 
 export default function LoadingPage() {
-  // const { arrivalCity, departureCity } = useCityContext();
+
  const [loading, setLoading] = useState(true);
 const router=useRouter();
  useEffect(() => {
@@ -20,7 +20,7 @@ const router=useRouter();
        router.push('/result');
    }, 9000);
  
- }, []);
+ }, [router]);
   return (
     <div>
       <Header/>

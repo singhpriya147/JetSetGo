@@ -30,22 +30,22 @@ const status = [
 
  type Props={
   detail:boolean | null ,
-  setdetail:(detail:boolean)=>void
+  setDetail:(detail:boolean)=>void
 
  }
 
-const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
+const FlightDetail: React.FC<Props> = ({ detail, setDetail }) => {
   return (
     <div className='max-w-[600px] min-w-[300px] h-auto bg-white border-size border-green-50 absolute shadow-md right-0  rounded-md p-3  mt-5 mr-5'>
       <div className='h-24 border-b-2 p-3'>
-        <LeftArrow height={50} weight={50} onClick={() => setdetail(!detail)} />
+        <LeftArrow height={50} weight={50} onClick={() => setDetail(!detail)} />
         <span>Flight Detail</span>
       </div>
       {/* ToDo : flex flex -row */}
       <div className='flex flex-row max-sm:flex-col'>
         <div className='pt-5'>
           {/* stepper  */}
-          {status.map((item) => (
+          {status.map((item,index) => (
             <div className='flex flex-row gap-3'>
               <div className=' flex flex-col justify-center gap-1 mb-1 items-center'>
                 <div className='h-[15px] w-[15px] border-size border-[#000C0B] rounded-full'></div>
@@ -60,7 +60,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
                 ></div>
               </div>
 
-              <div>
+              <div key={index}>
                 <span className='text-sm'>{item.day}</span>
                 <div className='flex flex-col gap-2'>
                   <h2>
