@@ -20,10 +20,15 @@ const toggleDetail=()=>{
         <div onClick={toggleDetail}>
           <Card />
         </div>
-
-        <Card />
-        <Card />
-        <Card />
+        <div onClick={toggleDetail}>
+          <Card />
+        </div>
+        <div onClick={toggleDetail}>
+          <Card />
+        </div>
+        <div onClick={toggleDetail}>
+          <Card />
+        </div>
       </div>
     </div>
   );
