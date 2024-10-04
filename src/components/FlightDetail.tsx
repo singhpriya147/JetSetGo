@@ -47,15 +47,15 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           {/* stepper  */}
           {status.map((item) => (
             <div className='flex flex-row gap-3'>
-              <div className=' flex flex-col justify-center items-center'>
-                <div className='h-[15px] w-[15px] border-2 border-black rounded-full'></div>
+              <div className=' flex flex-col justify-center gap-1 mb-1 items-center'>
+                <div className='h-[15px] w-[15px] border-2 border-[#000C0B] rounded-full'></div>
                 {/*  if layover is not empty sring then added dotted line instead of solid  line  */}
 
                 <div
                   className={` ${
                     item.layover
                       ? 'border-l-2 border-dashed border-grey-400 h-[100px]'
-                      : 'bg-black w-[2px] h-[50px]'
+                      : 'bg-[#000C0B] w-[2px] h-[50px]'
                   }`}
                 ></div>
               </div>
@@ -78,7 +78,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           <div></div>
         </div>
 
-        <div className='h-[200px] w-[200px] flex flex-col pt-5 items-end gap-24'>
+        <div className='h-[200px] w-[400px] flex flex-col pt-5 items-end gap-24'>
           <div className='flex flex-row gap-3'>
             <LufthansaLogo style={{ height: 50, width: 50 }} />
 
