@@ -4,13 +4,23 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
- 
+ color: #484A4D;
+
 
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  .accent-text{
+    color: #000C0B;
+  }
+  .text-sec{
+    color:#001F1D;
+  }
+  .border-color{
+    color:#E6E8EB
   }
 }
 
@@ -41,6 +51,8 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --accent-text: #000C0B;
+
   }
   .dark {
     --background: 240 10% 3.9%;
@@ -83,7 +95,7 @@ body {
 
 
 .animated-gradient {
-  /* background: repeating-linear-gradient(to right, red 0%, blue 50%, red 100%); */
+ 
   background: repeating-linear-gradient(90deg, rgba(58, 104, 137, 0.5) 0%, #3A6889 45.63%, rgba(58, 104, 137, 0.5) 100%);
   width: 100%;
   background-size: 200% auto;

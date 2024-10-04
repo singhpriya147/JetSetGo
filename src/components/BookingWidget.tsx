@@ -12,7 +12,7 @@ import {
   SelectValue,
   SelectContent,
   SelectGroup,
-  // SelectLabel,
+ 
   SelectItem,
 } from '@/components/ui/select';
 
@@ -87,8 +87,7 @@ const {
 const [isDepartureOpen, setIsDepartureOpen] = useState<boolean>(false);
 const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
 
-// const [departureDate, setDepartureDate] = useState<Date | null>(null);
-// const [returnDate, setReturnDate] = useState<Date | null>(null);
+
 
 
 
@@ -116,11 +115,7 @@ const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
    setIsDepartureOpen(false);
  };
 
- const formatDate = (date: Date | null): string => {
-   return date
-     ? date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
-     : 'Select Date';
- };
+
  const formatDateForLabel=(date:Date | null):string=>{
 return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',year:'numeric'}):'Select Date'
  };
@@ -140,8 +135,8 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
 
   return (
     <div className=' flex  flex-col p-3 gap-6 '>
-      <div className='bg-[#F5F7FA] w-24 text-center rounded-md p-1 '>
-        <span>Flights</span>
+      <div className='bg-[#F5F7FA] w-24 text-center  rounded-md p-1 '>
+        <span className='accent-text'>Flights</span>
       </div>
       <div className='flex flex-row gap-2 items-center'>
         {/* <LocationIcon /> */}
@@ -188,7 +183,9 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
                   <span>Departure</span>
                   <div className='flex flex-row'>
                     <CalenderIcon className='mr-2' />
-                    {formatDateForLabel(departureDate)}
+                    <span className='accent-text '>
+                      {formatDateForLabel(departureDate)}
+                    </span>
                   </div>
                 </div>
               ) : (
@@ -218,7 +215,9 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
                   <span>Return</span>
                   <div className='flex flex-row'>
                     <CalenderIcon className='mr-2' />
-                    {formatDateForLabel(returnDate)}
+                    <span className='accent-text '>
+                      {formatDateForLabel(returnDate)}
+                    </span>
                   </div>
                 </div>
               ) : (

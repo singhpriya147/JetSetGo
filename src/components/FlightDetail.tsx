@@ -3,23 +3,27 @@ import { LufthansaLogo } from "@/icons";
 const status = [
   {
     day: 'Sat 28 Sept 2:15',
-    aiportName: 'DXB Dubai Internationa Airport',
+    code:'DXB',
+    aiportName: 'Dubai Internationa Airport',
     layover:'',
   },
   {
     day: 'Sat 28 Sept 2:15',
-    aiportName: 'RUH King Khalid International Airport',
+    code:'RUH',
+    aiportName: 'King Khalid International Airport',
     layover:'Layover 2h 25m'
   },
   
   {
     day: 'Sat 28 Sept 2:15',
-    aiportName: 'RUH King Khalid International Airport',
+    code:'RUH',
+    aiportName: 'King Khalid International Airport',
     layover:''
   },
   {
     day: 'Sat 28 Sept 2:15',
-    aiportName: 'CDG Paris-charles de Gualle Airport',
+    code:'CDG',
+    aiportName: 'Paris-charles de Gualle Airport',
     layover:''
   },
 ];
@@ -32,13 +36,9 @@ const status = [
 
 const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
   return (
-    <div className='w-[500px] h-[550px] bg-white border-2 border-green-50 absolute right-0 m-4 rounded-md p-3'>
+    <div className='w-[600px] h-[550px] bg-white border-2 border-green-50 absolute right-0 m-4 rounded-md p-3'>
       <div className='h-24 border-b-2 p-3'>
-        <LeftArrow
-          height={50}
-          weight={50}
-          onClick={() => setdetail(!detail)}
-        />
+        <LeftArrow height={50} weight={50} onClick={() => setdetail(!detail)} />
         <span>Flight Detail</span>
       </div>
       {/* ToDo : flex flex -row */}
@@ -61,9 +61,11 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
               </div>
 
               <div>
-                <span>{item.day}</span>
+                <span className='text-sm'>{item.day}</span>
                 <div className='flex flex-col gap-2'>
-                  <h2>{item.aiportName}</h2>
+                  <h2>
+                    {item.code} &#8226; {item.aiportName}
+                  </h2>
                   {item.layover && (
                     <p className='text-gray-500'>{item.layover}</p>
                   )}
@@ -80,19 +82,19 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           <div className='flex flex-row gap-3'>
             <LufthansaLogo style={{ height: 50, width: 50 }} />
 
-            <div>
-              <span>Saudi Arabian Airlines SV553</span>
-              <span>Economy A330</span>
-              <span>Flight time 3h 45m</span>
+            <div className='text-sm'>
+              <p>Saudi Arabian Airlines &#8226; SV553</p>
+              <p>Economy &#8226; A330</p>
+              <p>Flight time 3h 45m</p>
             </div>
           </div>
           <div className='flex flex-row gap-3'>
             <LufthansaLogo style={{ height: 50, width: 50 }} />
 
-            <div>
-              <span>Saudi Arabian Airlines SV553</span>
-              <span>Economy A330</span>
-              <span>Flight time 3h 45m</span>
+            <div className='text-sm'>
+              <p>Saudi Arabian Airlines &#8226; V553</p>
+              <p>Economy &#8226; A330</p>
+              <p>Flight time 3h 45m</p>
             </div>
           </div>
         </div>

@@ -42,7 +42,7 @@ const handleCrossClick = () => {
         </div>
       ) : (
         <div className='h-[106px] bg-white w-full flex justify-between items-center pl-28 pr-28 border-b-2 border-grey-100 '>
-          <div className='h-12 bg-white rounded-full w-2/3 border-2 pl-5 pr-5 border-black flex flex-row justify-between items-center'>
+          <div className='h-12 bg-white rounded-full w-2/3 border-2 pl-5 pr-5 border-color flex flex-row justify-between items-center'>
             <div className=' pr-10'>
               <span className='mr-3 font-bold '>{departureCity?.code}</span>
               {departureCity?.cityName}
