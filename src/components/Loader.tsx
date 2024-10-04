@@ -1,7 +1,7 @@
 
 
 const Loader = () => {
-  return <div className='animated-gradient'>hi</div>;
+  return <div className='animated-gradient'></div>;
 }
 
 export default Loader
