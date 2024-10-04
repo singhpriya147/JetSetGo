@@ -41,8 +41,8 @@ const handleCrossClick = () => {
           />
         </div>
       ) : (
-        <div className='h-[106px] bg-white w-full flex justify-between items-center pl-28 pr-28  '>
-          <div className='h-12 bg-white rounded-full w-2/3 border-size pl-5 pr-5 border-[##E6E8EB] flex flex-row justify-between items-center'>
+        <div className='h-[106px] bg-white w-3/4   mx-auto max-sm:text-sm max-sm:w-full flex justify-between items-center   '>
+          <div className='h-12  bg-white rounded-full w-2/3  border-size  pl-2 pr-2 border-[##E6E8EB] flex flex-row justify-between items-center'>
             <div className=' pr-10 '>
               <span className='mr-3 font-bold accent-text'>
                 {departureCity?.code}
@@ -77,7 +77,7 @@ const handleCrossClick = () => {
         </div>
       )}
 
-{/* <Loader/> */}
+      {/* <Loader/> */}
     </div>
   );
 }

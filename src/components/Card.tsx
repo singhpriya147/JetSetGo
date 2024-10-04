@@ -5,7 +5,7 @@ import { Separator } from "./ui/separator";
 
 const Card = () => {
   return (
-    <div className='h-48 w-[1056px] bg-white border-size rounded-md borderp-4  flex flex-row justify-between'>
+    <div className='h-auto max-w-full bg-white border-size rounded-md borderp-4  flex flex-row justify-between max-md:flex-col min-w-[300px] '>
       <div className='w-3/4 flex flex-col justify-center gap-5 p-4'>
         <div className='flex flex-row gap-2'>
           <EmiratesLogo style={{ height: 50, width: 50 }} />
