@@ -36,13 +36,13 @@ const status = [
 
 const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
   return (
-    <div className='w-[600px] h-[550px] bg-white border-size border-green-50 absolute shadow-md right-0 m-4 rounded-md p-3'>
+    <div className='max-w-[600px] min-w-[300px] h-auto bg-white border-size border-green-50 absolute shadow-md right-0  rounded-md p-3  mt-5 mr-5'>
       <div className='h-24 border-b-2 p-3'>
         <LeftArrow height={50} weight={50} onClick={() => setdetail(!detail)} />
         <span>Flight Detail</span>
       </div>
       {/* ToDo : flex flex -row */}
-      <div className='flex flex-row'>
+      <div className='flex flex-row max-sm:flex-col'>
         <div className='pt-5'>
           {/* stepper  */}
           {status.map((item) => (
@@ -78,7 +78,7 @@ const FlightDetail: React.FC<Props> = ({ detail, setdetail }) => {
           <div></div>
         </div>
 
-        <div className='h-[200px] w-[400px] flex flex-col pt-5 items-end gap-24'>
+        <div className='h-[200px] w-[400px] flex flex-col pt-5 items-end gap-24 justify-center items-center max-sm:gap-5'>
           <div className='flex flex-row gap-3'>
             <LufthansaLogo style={{ height: 50, width: 50 }} />
 
