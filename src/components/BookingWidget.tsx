@@ -90,14 +90,14 @@ const [isreturnOpen, setIsReturnOpen] = useState<boolean>(false);
 
 
 
-
-  useEffect(() => {
-    const cityName = data.airports.map((airport) => ({
-      cityName: airport.city,
-      code: airport.code,
-    }));
-    setCityList(cityName);
-  }, []);
+//  
+  // useEffect(() => {
+  //   const cityName = data.airports.map((airport) => ({
+  //     cityName: airport.city,
+  //     code: airport.code,
+  //   }));
+  //   setCityList(cityName);
+  // }, []);
  const handleCityChange = (city: City, type: 'departure' | 'arrival') => {
    if (type === 'departure') {
      setDepartureCity(city);
