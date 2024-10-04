@@ -149,7 +149,13 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
           label={
             <span className='flex items-center'>
               <LocationIcon className='mr-2' />
-              Where from?
+              <span>
+                {departureCity ? (
+                  <span>{departureCity.cityName}</span>
+                ) : (
+                  'Where from?'
+                )}
+              </span>
             </span>
           }
           type='departure'
@@ -161,7 +167,13 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
           label={
             <span className='flex items-center'>
               <LocationIcon className='mr-2' />
-              Where to?
+              <span>
+                {arrivalCity ? (
+                  <span>{arrivalCity.cityName}</span>
+                ) : (
+                  'Where to?'
+                )}
+              </span>
             </span>
           }
           cityList={cityList}
@@ -171,9 +183,8 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
         <div className='flex flex-row gap-2 pl-6'>
           <div>
             <Button variant='outline' onClick={toggleDepartureCalender}>
-        
               {departureDate ? (
-                <div >
+                <div>
                   <span>Departure</span>
                   <div className='flex flex-row'>
                     <CalenderIcon className='mr-2' />
