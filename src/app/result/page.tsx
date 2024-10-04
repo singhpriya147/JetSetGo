@@ -1,9 +1,20 @@
-import React from 'react'
-
+'use client'
+import Header from '@/components/Header';
+import Card from '@/components/Card';
 const page = () => {
+
+
   return (
-    <div>page</div>
-  )
+    <div>
+      <Header/>
+      <div>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </div>
+    </div>
+  );
 }
 
 export default page
