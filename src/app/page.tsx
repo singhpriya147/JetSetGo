@@ -199,9 +199,9 @@ export default function Home() {
           Search Flights
         </Button>
       </div> */}
-
-<BookingWidget/>
-
+      <div className='bg-white rounded-lg border-2 border-gray-300 h-52 w-100 flex  flex-col justify-center items-center '>
+        <BookingWidget />
+      </div>
     </div>
   );
 }

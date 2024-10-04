@@ -6,8 +6,8 @@ const page = () => {
 
   return (
     <div>
-      <Header/>
-      <div>
+      <Header />
+      <div className='flex justify-center items-center flex-col pt-6 gap-3'>
         <Card />
         <Card />
         <Card />

@@ -25,11 +25,12 @@ const router=useRouter();
     <div>
       <Header />
 
-     
       {loading ? (
         <div className='flex justify-center items-start'>
-          <div className='absolute z-50 pt-4 '><LoadingCard/></div>
-          <div>
+          <div className='absolute z-50 pt-4 '>
+            <LoadingCard />
+          </div>
+          <div className='flex justify-center items-center flex-col pt-6 gap-3'>
             <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />

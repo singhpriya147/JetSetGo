@@ -129,8 +129,9 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
 
 
   return (
-    <div className='bg-white rounded-lg border-2 border-gray-300 h-52 w-2/3 flex  flex-col p-5 gap-8'>
-      <div className='bg-[#F5F7FA] w-24 text-center rounded-md p-1'>
+    // <div className='bg-white rounded-lg border-2 border-gray-300 h-52 w-2/3 flex  flex-col p-5 gap-8'>
+    <div className=' flex  flex-col p-3 gap-6 '>
+      <div className='bg-[#F5F7FA] w-24 text-center rounded-md p-1 '>
         <span>Flights</span>
       </div>
       <div className='flex flex-row gap-2 items-center'>
@@ -170,7 +171,7 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
                 mode='single'
                 selected={departureDate || new Date()}
                 onSelect={(date) => setDepartureDate(date as Date | null)}
-                className='rounded-md border '
+                className='rounded-md border absolute z-50 bg-white'
               />
             ) : (
               ''
@@ -186,7 +187,7 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
                 mode='single'
                 selected={returnDate || new Date()}
                 onSelect={(date) => setReturnDate(date as Date | null)}
-                className='rounded-md border'
+                className='rounded-md border absolute bg-white'
               />
             ) : (
               ''
@@ -205,6 +206,7 @@ const [returnDate, setReturnDate] = useState<Date | null>(null);
         </Button>
       </div>
     </div>
+    // </div>
   );
 };
 
