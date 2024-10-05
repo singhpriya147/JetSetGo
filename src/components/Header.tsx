@@ -41,8 +41,8 @@ const handleCrossClick = () => {
           />
         </div>
       ) : (
-        <div className='h-[106px] bg-white w-3/4   mx-auto max-sm:text-sm max-sm:w-full flex justify-between items-center   '>
-          <div className='h-12  bg-white rounded-full w-2/3  border-size  pl-2 pr-2 border-[##E6E8EB] flex flex-row justify-between items-center'>
+        <div className='h-[106px] bg-white w-3/4   mx-auto max-sm:text-sm flex justify-between items-center  max-sm:ml-0 max-sm:mr-0 max-sm:w-full'>
+          <div className='h-12  bg-white rounded-full w-2/3 max-sm:w-full  border-size  pl-2 pr-2 border-[##E6E8EB] flex flex-row justify-between items-center'>
             <div className=' pr-10 '>
               <span className='mr-3 font-bold accent-text'>
                 {departureCity?.code}
@@ -59,9 +59,10 @@ const handleCrossClick = () => {
             <div className='w-0.5 h-10 bg-slate-200 rounded-md'></div>
 
             <div className='flex fel-row'>
-              <span>
-                {formatDate(departureDate)}-{formatDate(returnDate)}
-              </span>
+              <p>
+                <span> {formatDate(departureDate)}</span>-
+                <span>{formatDate(returnDate)}</span>
+              </p>
             </div>
             <div className='w-0.5 h-10 bg-slate-200 rounded-sm'></div>
             <HeaderSerachIcon
