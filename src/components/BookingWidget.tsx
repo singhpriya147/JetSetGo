@@ -146,7 +146,7 @@ toggleReturnCalender();
 };
 
   return (
-    <div className=' flex  flex-col p-3 gap-6 '>
+    <div className=' flex  w-auto flex-col p-3 gap-6 '>
       <div className='bg-[#F5F7FA] w-24 text-center  rounded-md p-1 '>
         <span className='accent-text'>Flights</span>
       </div>
@@ -223,7 +223,7 @@ toggleReturnCalender();
           </div>
           <div>
             <Button variant='outline' onClick={toggleReturnCalender}>
-              {/* <CalenderIcon className='mr-2' /> */}
+             
               {returnDate ? (
                 <div>
                   <span>Return</span>
@@ -248,6 +248,7 @@ toggleReturnCalender();
                 onSelect={(date) => setReturnDate(date as Date | null)}
                 onDayClick={handleReturnDateSelection}
                 className='rounded-md border absolute bg-white'
+               
               />
             ) : (
               ''
