@@ -133,15 +133,24 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
  };
 
 
+const handleDepartureDateSelection=()=>{
+
+toggleDepartureCalender();
+
+
+}
+
+
+const handleReturnDateSelection = () => {
+toggleReturnCalender();
+};
 
   return (
     <div className=' flex  flex-col p-3 gap-6 '>
       <div className='bg-[#F5F7FA] w-24 text-center  rounded-md p-1 '>
         <span className='accent-text'>Flights</span>
       </div>
-      <div>
-       
-      </div>
+      <div></div>
       <div className='flex flex-row gap-2 items-center max-sm:flex-col'>
         {/* <LocationIcon /> */}
         <SelectDemo
@@ -205,6 +214,7 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
                 mode='single'
                 selected={departureDate || new Date()}
                 onSelect={(date) => setDepartureDate(date as Date | null)}
+                onDayClick={handleDepartureDateSelection}
                 className='rounded-md border absolute z-50 bg-white'
               />
             ) : (
@@ -236,6 +246,7 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
                 mode='single'
                 selected={returnDate || new Date()}
                 onSelect={(date) => setReturnDate(date as Date | null)}
+                onDayClick={handleReturnDateSelection}
                 className='rounded-md border absolute bg-white'
               />
             ) : (
