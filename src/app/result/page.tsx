@@ -20,7 +20,14 @@ const toggleDetail=()=>{
 
   return (
     <div>
-      {detail ? <FlightDetail detail={detail} setDetail={setDetail }/> : ' '}
+      {detail ? (
+        <div >
+          {' '}
+          <FlightDetail detail={detail} setDetail={setDetail} />
+        </div>
+      ) : (
+       <></>
+      )}
       <Header />
       <div className='h-[1px] bg-[#E6E8EB] '></div>
       <div className='flex justify-center items-center flex-col pt-6 gap-3 '>

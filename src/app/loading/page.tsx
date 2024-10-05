@@ -27,8 +27,10 @@ const router=useRouter();
       <Loader />
       {loading ? (
         <div className='flex justify-center items-start'>
-          <div className='absolute z-50 pt-4 '><LoadingCard /></div>
-          <div className='w-3/4 mx-auto flex flex-col gap-5 p-3'>
+          <div className='absolute z-50 pt-4 '>
+            <LoadingCard />
+          </div>
+          <div className='w-3/4 mx-auto flex flex-col gap-5 p-3 '>
             <CardSkeleton />
             <CardSkeleton />
             <CardSkeleton />
@@ -36,17 +38,14 @@ const router=useRouter();
           </div>
         </div>
       ) : (
-
         <div className='flex justify-center items-start'>
-          
-          <div className='w-3/4 mx-auto flex flex-col gap-5 p-3'>
+          <div className='w-3/4 mx-auto flex flex-col gap-5 p-3 '>
             <Card />
-          <Card />
-          <Card />
-          <Card />
+            <Card />
+            <Card />
+            <Card />
           </div>
         </div>
-        
       )}
     </div>
   );
