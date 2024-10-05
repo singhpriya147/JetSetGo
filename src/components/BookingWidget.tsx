@@ -124,7 +124,10 @@ return date ? date.toLocaleDateString('en-GB' ,{day:'2-digit',month:'2-digit',ye
  const handleSearchClick = () => {
    const selectedDepartureCity = departureCity;
    const selectedArrivalCity = arrivalCity; 
-   
+   if (!selectedDepartureCity || !selectedArrivalCity || !departureDate) {
+     alert('Please select a departure city, arrival city, and departure date.');
+     return; // Stop the function if validation fails
+   }
    setDepartureCity(selectedDepartureCity);
    setArrivalCity(selectedArrivalCity);
 
